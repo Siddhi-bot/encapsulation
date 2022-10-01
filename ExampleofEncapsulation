@@ -1,0 +1,47 @@
+class Student {
+            private String name;
+            private int roll;
+        
+            public String getName() {
+                return name;
+            }
+        
+            public void setName(String name) {
+                this.name = name;
+            }
+        
+            public int getRoll() {
+                return roll;
+            }
+            public void setRoll(int roll) {
+                this.roll = roll;
+            }
+        }
+        
+        class College {
+        
+            public void send(Student student) {
+                new Institute().receive(student);
+            }
+        
+        }
+        
+        class Institute {
+            public void receive(Student student) {
+                System.out.println(student.getName());
+                System.out.println(student.getRoll());
+            }
+        }
+        
+        public class Test {
+            public static void main(String[] args) {
+                Student student = new Student();
+                student.setName("Siddhi Agarwal");
+                student.setRoll(1);
+        
+                College college = new College();
+                college.send(student);
+                
+            }
+        }
+        
